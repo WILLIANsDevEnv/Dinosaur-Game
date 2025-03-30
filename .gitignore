@@ -1,0 +1,21 @@
+# Ignorar arquivos do Pygame
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignorar assets pesados
+assets/
+*.wav
+*.mp3
+*.ogg
+*.png
+*.jpg
+*.jpeg
+
+# Ignorar arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar dependências do ambiente virtual
+venv/
+.env
