@@ -1,9 +1,7 @@
 import pygame
 import sys
 import random
-
-from code.Const import obstacle_cooldown, cloud_group, obstacle_group, dinosaur, CLOUD_EVENT, cloud, dino_group, ptero_group, ground, game_over, game_speed, player_score, obstacle_timer, ground_x
-#from code.Dino import Dino
+from code.Const import *
 from code.Cloud import Cloud
 from code.Cactus import Cactus
 from code.Ptero import Ptero
@@ -15,10 +13,8 @@ pygame.display.set_caption("Dino Game")
 
 game_font = pygame.font.Font("assets/PressStart2P-Regular.ttf", 24)
 
-# Functions
-
-
 def end_game():
+    """Finaliza o jogo e exibe a pontuação."""
     global player_score, game_speed
     game_over_text = game_font.render("Game Over!", True, "black")
     game_over_rect = game_over_text.get_rect(center=(640, 300))
@@ -29,7 +25,6 @@ def end_game():
     game_speed = 5
     cloud_group.empty()
     obstacle_group.empty()
-
 
 while True:
     keys = pygame.key.get_pressed()
@@ -55,8 +50,6 @@ while True:
                     player_score = 0
 
     screen.fill("white")
-
-    # Collisions
     if pygame.sprite.spritecollide(dino_group.sprite, obstacle_group, False):
         game_over = True
         death_sfx = pygame.mixer.Sound("assets/sfx/lose.mp3")
