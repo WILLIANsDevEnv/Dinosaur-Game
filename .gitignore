@@ -2,15 +2,8 @@
 __pycache__/
 *.pyc
 *.pyo
-
-# Ignorar assets pesados
-assets/
-*.wav
-*.mp3
-*.ogg
-*.png
-*.jpg
-*.jpeg
+build
+main.spec
 
 # Ignorar arquivos do sistema
 .DS_Store
